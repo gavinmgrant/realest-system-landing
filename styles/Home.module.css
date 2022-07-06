@@ -1,15 +1,16 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0.5rem;
 }
 
 .main {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
+  flex-direction: row;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Outfit", sans-serif;
 }
 
 .footer {
@@ -42,25 +43,21 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
+  font-size: 2rem;
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 1rem 0rem 1rem 1rem;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  text-align: left;
 }
 
 .code {
   background: #fafafa;
   border-radius: 5px;
   padding: 0.75rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
@@ -108,7 +105,32 @@
   margin-left: 0.5rem;
 }
 
+.blink {
+  animation: blink 3s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1.5;
+  }
+  100% {
+    opacity: 3;
+  }
+}
+
 @media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .description {
+    margin: 1rem 0rem;
+    text-align: center;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;
